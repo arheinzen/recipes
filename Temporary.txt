@@ -1,0 +1,13 @@
+def make_call(num):
+    params={"page"=num}
+    response=...
+if response=404:
+    break
+print num
+
+for recipe in recipes
+
+for ingredient in ingredients
+
+fpr i in range(0, 100)
+    make_call(i)

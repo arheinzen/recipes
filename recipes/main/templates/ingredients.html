@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block body %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Ingredients </title>
+    
+    
+</head>
+<body>
+   
+   <div class="bigPicture">
+       
+       <div class="ingredients">
+       
+           <h3> Ingredients for </h3>
+           <h2> {{ recipe.name }} </h2>
+           
+           {% for ingredient in recipe.ingredients.all %}
+           
+           {{ ingredient.name }}
+           
+           </br>
+       
+           {% endfor %}
+            
+           </br>
+           
+           <image src="/media/{{ recipe.image }}"></image>
+           
+           </br>
+            
+           <h3> Cooking directions </h3>
+             
+           {{ recipe.directions }}
+             
+           </br>
+             
+           <h4> Recipe Website Link </h4>
+            
+           <a href="{{ recipe.recipe_link }}" target="_blank">{{ recipe.recipe_link }}</a>
+              
+        </div>
+    
+    </div>
+    
+</body>
+</html>
+
+
+{% endblock body %}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block body %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Recipe List </title>
+</head>
+<body>
+
+    <div class="bigPicture">
+
+       <h1> Recipes </h1>
+       
+        <div class="recipeList">
+           
+           {% for recipe in recipe_list %}
+           
+           <a href="{{ recipe.slug }}">
+            <h5> {{ recipe.title }} </h5>
+           </a>
+           
+           {% endfor %}
+            
+            
+        </div>        
+        
+    
+    </div>
+
+</body>
+</html>
+
+
+{% endblock body %}
