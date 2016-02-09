@@ -20,7 +20,7 @@ Recipe.objects.all().delete()
 Ingredients.objects.all().delete()
 
 api_key = "f226968bd5f4291fea9ea9e0caad65b8"
-param_dict = {'key': api_key, 'sort': 'r', 'page': '1'}
+param_dict = {'key': api_key, 'sort': 'r', 'page': '5'}
 response = requests.get('http://food2fork.com/api/search/recipes.json', params=param_dict)
 
 print response

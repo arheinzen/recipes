@@ -16,6 +16,16 @@ def recipe_list_API_view(request):
     output = serializers.serialize('json', recipes, fields=('name','ingredients','directions'))
     return HttpResponse(output, content_type='application/json')
 
+
+def home(request):
+    recipes = Recipe.objects.all()
+    ingredients = 
+
+
+
+
+
+
 def recipelist(request):
     recipes = Recipe.objects.all()
 

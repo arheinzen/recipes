@@ -13,7 +13,42 @@
 </head>
 <body>
    
-<h1> The Recipe Organizer Home Page </h1>
+    <div class="bigPicture">
+       <div>
+           <div class="topHeader row">
+             <div>
+                <img class="headerPics col-md-3"  src="../../media/media/5112225022_e4d9aef755_zb721.jpg" style="width:290px;height:228px;">
+             </div>
+             <div>
+                <img class="headerPics col-md-5" src="../../media/media/20100723innoutprimaryb815.jpg" style="width:290px;height:228px;">
+             </div>
+             <div>
+                <img class="headerPics col-md-7" src="../../media/media/6629086e7e.jpg" style="width:290px;height:228px;">
+             </div>
+             <div> 
+                <img class="headerPics col-md-9" src="../../media/media/8008393830.jpg" style="width:290px;height:228px;">
+             </div>
+             </div>
+             
+            <div class="recipeAndIngredients">
+                <div class="recipeList" style="float:left">
+                       {% for recipe in recipe_list %}
+           
+                       <a href="{{ recipe.slug }}">
+                        <h5> {{ recipe.title }} </h5>
+                       </a>
+           
+                       {% endfor %}
+                    
+                </div>
+                <div class="ingredients" style="float:right">
+                    
+                </div>
+                
+                
+            </div>
+       </div>
+   </div>
     
 </body>
 </html>
