@@ -12,7 +12,10 @@ urlpatterns = [
     url(r'^recipelist/(?P<slug>.+)/$', RecipeDetailView.as_view()),
     url(r'^recipecreate/$', RecipeCreateView.as_view()),
     url(r'^recipesuccess/$', TemplateView.as_view(template_name="recipe_success.html")),
-    url(r'^home/$', TemplateView.as_view(template_name="home.html")),
+    url(r'^home/$', 'main.views.home'),
+    url(r'^home/(?P<slug>.+)/$', RecipeDetailView.as_view()),
     url(r'^ingredientcreate/$', IngredientCreateView.as_view()),
     
 ]
+
+#TemplateView.as_view(template_name="home.html")

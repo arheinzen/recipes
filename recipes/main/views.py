@@ -19,11 +19,15 @@ def recipe_list_API_view(request):
 
 def home(request):
     recipes = Recipe.objects.all()
-    ingredients = 
-
-
-
-
+    ingredients = Ingredients.objects.all()
+    
+    context = {}
+        
+    context['recipe_list'] = recipes
+    
+    context['ingredient_list'] = ingredients
+    
+    return render(request, 'home.html', context)
 
 
 def recipelist(request):
@@ -61,3 +65,18 @@ class RecipeCreateView(CreateView):
 class IngredientCreateView(CreateView):
     form_class = IngredientForm
     template_name = "ingredientcreate.html"
+    
+
+def search(request):
+    query_string = ''
+    found_entries = None
+    if ('q' in request.GET) and request.GET['q'].strip():
+        query_string = request.GET['q']
+        
+        entry_query = get_query(query_string, ['title', 'body',])
+        
+        found_entries = Entry.objects.filter(entry_query).order_by('-pub_date')
+
+    return render_to_response('search/search_results.html',
+                          { 'query_string': query_string, 'found_entries': found_entries },
+                          context_instance=RequestContext(request))
