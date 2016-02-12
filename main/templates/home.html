@@ -1,0 +1,63 @@
+<!DOCTYPE html> {% extends 'base.html' %} {% load staticfiles %} {% block body %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+
+<body>
+
+    <div class="bigPicture">
+        <div>
+            <div class="topHeader row">
+                <div>
+                    <img class="headerPics col-md-3" src="../../media/media/3883382922_161fa35504f96b.jpg" style="width:290px;height:228px;">
+                </div>
+                <div>
+                    <img class="headerPics col-md-5" src="../../media/media/Buffalo2BChicken2BChili2B5002B9548b7d71737.jpg" style="width:290px;height:228px;">
+                </div>
+                <div>
+                    <img class="headerPics col-md-7" src="../../media/media/BaileysPudding3bfa.jpg" style="width:290px;height:228px;">
+                </div>
+                <div>
+                    <img class="headerPics col-md-9" src="../../media/media/steakfingers0a45.jpg" style="width:290px;height:228px;">
+                </div>
+            </div>
+
+            </br>
+
+            <div class="recipeAndIngredients row">
+                <div class="recipeList col-md-5">
+                    {% for recipe in recipe_list %}
+
+                    <a href="{{ recipe.slug }}">
+                        <input type="checkbox" /> &nbsp; {{ recipe.name }}</br>
+                    </a>
+
+                    {% endfor %}
+
+                </div>
+
+                <div class="col-md-2"></div>
+
+                <div class="ingredientList col-md-5">
+                    {% for ingredient in ingredient_list %}
+
+                    <h5> {{ ingredient.name }}</h5> {% endfor %}
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
+{% endblock body %}
