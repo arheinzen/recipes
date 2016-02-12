@@ -1,25 +1,21 @@
-<!DOCTYPE html>
-
-{% extends 'base.html' %}
-
-{% load staticfiles %}
-
-{% block body %}
+<!DOCTYPE html> {% extends 'base.html' %} {% load staticfiles %} {% block body %}
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Ingredient Creation</title>
 </head>
+
 <body>
-   
+
     <form action="/main/ingredientcreate/" method="post">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <input type="submit" value="Create" />
+        {% csrf_token %} {{ form.as_p }}
+        <input type="submit" value="Create" />
     </form>
-    
+
 </body>
+
 </html>
 
 
