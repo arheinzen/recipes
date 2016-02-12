@@ -925,7 +925,7 @@ background: #F39D17;
 	right: 0px;
 	margin-top: -25px;
 	line-height: 50px;
-	background: url('../images/zoom.png') top center no-repeat;
+/*	background: url('../images/zoom.png') top center no-repeat;*/
 	padding: 17px 0;
 }
 #portfolio .items li a:hover .overlay {
