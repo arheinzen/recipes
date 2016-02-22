@@ -145,6 +145,6 @@ except Exception as e:
     pass
 
 try:
-    from secret_settings import *
+    from server_settings import *
 except Exception as e:
     pass
