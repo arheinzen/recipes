@@ -4,7 +4,7 @@ from main.slug import unique_slugify
 
 from django.db import models
 
-# Create your models here.
+# Create your models here. This is a test
 
 class Ingredients(models.Model):
     name = models.CharField(max_length=300)
