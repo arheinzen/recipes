@@ -21,11 +21,9 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'kktdt6$-=2fv7(ceo1=irq8z)rdu&##+q*1*pn)2f9_1m@4ant'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -76,15 +74,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'recipes.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/1.9/ref/settings/#databases
-
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-    }
-}
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES["default"].update(db_from_env)
@@ -152,5 +141,10 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 try:
     from local_settings import *
+except Exception as e:
+    pass
+
+try:
+    from secret_settings import *
 except Exception as e:
     pass
