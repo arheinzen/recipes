@@ -1,9 +1,0 @@
-Login Info:
-
-email: arheinzen@gmail.com
-
-Password: ammon's food2fork password
-
-Current API Plan: Free 
-Usage: 0 / 500 
-API Key: f226968bd5f4291fea9ea9e0caad65b8 

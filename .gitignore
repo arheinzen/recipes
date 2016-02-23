@@ -3,5 +3,7 @@
 bower_components/
 local_settings.py
 staticfiles/
+static/
 Temporary.txt
 food2forkinfo.txt
+media/
